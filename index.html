@@ -61,10 +61,44 @@
 
             </div>
             <div class="bar__user">
-                <div class="bar__user-login"><a href="#">login</a></div>
-                <div class="bar__user-regis"><a href="#">register</a></div>
+                <div class="bar__user-login"><a href="login.html" id="login-link">login</a></div>
+                <div class="bar__user-regis"><a href="register.html" id="register-link">register</a></div>
             </div>
         </div>
+
+        
+        <script>
+// Giả sử bạn lưu trữ thông tin đăng nhập trong localStorage hoặc một biến toàn cục
+// Kiểm tra xem người dùng đã đăng nhập chưa
+let isLoggedIn = localStorage.getItem('isLoggedIn'); // Giả sử trạng thái đăng nhập được lưu trong localStorage
+
+// Nếu người dùng đã đăng nhập, cập nhật giao diện
+if (isLoggedIn === 'true') {
+    // Lấy tên người dùng từ localStorage
+    let username = localStorage.getItem('username'); // Lấy tên người dùng đã lưu từ localStorage
+
+    // Nếu tên người dùng có tồn tại trong localStorage, thay thế "Hello, User" bằng tên người dùng
+    document.getElementById('login-link').textContent = 'Hello, ' + username;  // Thay đổi 'login' thành tên người dùng
+    document.getElementById('login-link').href = '#';  // Không dẫn tới trang đăng nhập
+
+    // Tạo nút đăng xuất
+    let logoutLink = document.createElement('a');
+    logoutLink.href = '#';
+    logoutLink.textContent = 'Logout';
+    logoutLink.addEventListener('click', function() {
+        // Xử lý đăng xuất, ví dụ: xóa dữ liệu đăng nhập
+        localStorage.removeItem('isLoggedIn');
+        localStorage.removeItem('username');  // Xóa tên người dùng khi đăng xuất
+        window.location.reload();  // Tải lại trang để cập nhật lại giao diện
+    });
+
+    // Thêm nút đăng xuất vào phần giao diện
+    document.querySelector('.bar__user-regis').appendChild(logoutLink);
+
+    // Ẩn hoặc thay đổi liên kết đăng ký nếu đã đăng nhập
+    document.getElementById('register-link').style.display = 'none';  // Ẩn liên kết đăng ký khi đã đăng nhập
+}
+        </script>
 
         <div class="main_nav">
             <div class="main_nav__logo"><a href="#"><img src="styles/images/logo.png" alt="logo">LITTLE BOY</a></div>
@@ -178,15 +212,28 @@
                                 <option>01</option>
                                 <option>02</option>
                                 <option>03</option>
+                                <option>04</option>
+                                <option>05</option>
+                                <option>06</option>
+                                <option>07</option>
+                                <option>08</option>
+                                <option>09</option>
+                                <option>10</option>
                             </select>
                         </div>
                         <div class="search_content__item">
                             <div>Trẻ em</div>
                             <select name="children" class="search_content__input">
-                                <option>0</option>
                                 <option>01</option>
                                 <option>02</option>
                                 <option>03</option>
+                                <option>04</option>
+                                <option>05</option>
+                                <option>06</option>
+                                <option>07</option>
+                                <option>08</option>
+                                <option>09</option>
+                                <option>10</option>
                             </select>
                         </div>
                         <button class="button search_content__button">Tìm kiếm <span></span><span></span><span></span>
@@ -210,18 +257,31 @@
                         <div class="search_content__item">
                             <div>Người lớn</div>
                             <select name="adults" class="search_content__input">
-                                <option>01</option>
+                              <option>01</option>
                                 <option>02</option>
                                 <option>03</option>
+                                <option>04</option>
+                                <option>05</option>
+                                <option>06</option>
+                                <option>07</option>
+                                <option>08</option>
+                                <option>09</option>
+                                <option>10</option>
                             </select>
                         </div>
                         <div class="search_content__item">
                             <div>Trẻ em</div>
                             <select name="children" class="search_content__input">
-                                <option>0</option>
                                 <option>01</option>
                                 <option>02</option>
                                 <option>03</option>
+                                <option>04</option>
+                                <option>05</option>
+                                <option>06</option>
+                                <option>07</option>
+                                <option>08</option>
+                                <option>09</option>
+                                <option>10</option>
                             </select>
                         </div>
                         <button class="button search_content__button">Tìm kiếm <span></span><span></span><span></span>
@@ -245,18 +305,31 @@
                         <div class="search_content__item">
                             <div>Người lớn</div>
                             <select name="adults" class="search_content__input">
-                                <option>01</option>
+                              <option>01</option>
                                 <option>02</option>
                                 <option>03</option>
+                                <option>04</option>
+                                <option>05</option>
+                                <option>06</option>
+                                <option>07</option>
+                                <option>08</option>
+                                <option>09</option>
+                                <option>10</option>
                             </select>
                         </div>
                         <div class="search_content__item">
                             <div>Trẻ em</div>
                             <select name="children" class="search_content__input">
-                                <option>0</option>
                                 <option>01</option>
                                 <option>02</option>
                                 <option>03</option>
+                                <option>04</option>
+                                <option>05</option>
+                                <option>06</option>
+                                <option>07</option>
+                                <option>08</option>
+                                <option>09</option>
+                                <option>10</option>
                             </select>
                         </div>
                         <button class="button search_content__button">Tìm kiếm <span></span><span></span><span></span>
@@ -280,18 +353,31 @@
                         <div class="search_content__item">
                             <div>Người lớn</div>
                             <select name="adults" class="search_content__input">
-                                <option>01</option>
+                              <option>01</option>
                                 <option>02</option>
                                 <option>03</option>
+                                <option>04</option>
+                                <option>05</option>
+                                <option>06</option>
+                                <option>07</option>
+                                <option>08</option>
+                                <option>09</option>
+                                <option>10</option>
                             </select>
                         </div>
                         <div class="search_content__item">
                             <div>Trẻ em</div>
                             <select name="children" class="search_content__input">
-                                <option>0</option>
                                 <option>01</option>
                                 <option>02</option>
                                 <option>03</option>
+                                <option>04</option>
+                                <option>05</option>
+                                <option>06</option>
+                                <option>07</option>
+                                <option>08</option>
+                                <option>09</option>
+                                <option>10</option>
                             </select>
                         </div>
                         <button class="button search_content__button">Tìm kiếm <span></span><span></span><span></span>
@@ -318,6 +404,13 @@
                                 <option>01</option>
                                 <option>02</option>
                                 <option>03</option>
+                                <option>04</option>
+                                <option>05</option>
+                                <option>06</option>
+                                <option>07</option>
+                                <option>08</option>
+                                <option>09</option>
+                                <option>10</option>
                             </select>
                         </div>
                         <div class="search_content__item">
@@ -327,6 +420,13 @@
                                 <option>01</option>
                                 <option>02</option>
                                 <option>03</option>
+                                <option>04</option>
+                                <option>05</option>
+                                <option>06</option>
+                                <option>07</option>
+                                <option>08</option>
+                                <option>09</option>
+                                <option>10</option>
                             </select>
                         </div>
                         <button class="button search_content__button">Tìm kiếm <span></span><span></span><span></span>
@@ -353,6 +453,13 @@
                                 <option>01</option>
                                 <option>02</option>
                                 <option>03</option>
+                                <option>04</option>
+                                <option>05</option>
+                                <option>06</option>
+                                <option>07</option>
+                                <option>08</option>
+                                <option>09</option>
+                                <option>10</option>
                             </select>
                         </div>
                         <div class="search_content__item">
@@ -362,6 +469,13 @@
                                 <option>01</option>
                                 <option>02</option>
                                 <option>03</option>
+                                <option>04</option>
+                                <option>05</option>
+                                <option>06</option>
+                                <option>07</option>
+                                <option>08</option>
+                                <option>09</option>
+                                <option>10</option>
                             </select>
                         </div>
                         <button class="button search_content__button">Tìm kiếm <span></span><span></span><span></span>
@@ -375,7 +489,7 @@
         <!--        Intro-->
         <div class="main_intro">
             <h2>Những tour du lịch tốt nhất</h2>
-            <p>Đây là những tour du lịch tốt nhất hiện nay của chúng tôi.</p>
+            <p>Đây là những tour du lịch tốt nhất đang có sẵn hiện nay của chúng tôi.</p>
             <p>Sẽ làm bạn hài lòng khi đăng ký những tour dưới đây.</p>
             <div class="main_intro__items">
                 <div class="intro_item">
@@ -395,7 +509,7 @@
                         </div>
                         <div class="button intro_button">
                             <div class="button_bcg"></div>
-                            <a href="#">Xem ngay<span></span><span></span><span></span></a></div>
+                            <a href="order.html">Book<span></span><span></span><span></span></a></div>
                     </div>
                 </div>
                 <div class="intro_item">
@@ -415,15 +529,15 @@
                         </div>
                         <div class="button intro_button">
                             <div class="button_bcg"></div>
-                            <a href="#">Xem ngay<span></span><span></span><span></span></a></div>
+                            <a href="order.html">Book<span></span><span></span><span></span></a></div>
                     </div>
                 </div>
                 <div class="intro_item">
-                    <div class="intro_item__backgroud" style="background-image: url(styles/images/intro_1.jpg)"></div>
+                    <div class="intro_item__backgroud" style="background-image: url(styles/images/phuquoc_slide.jpg)"></div>
                     <div class="intro_item__content">
                         <div class="intro_date">Từ 11/11 - 08/12</div>
                         <div class="intro_text">
-                            <h1>Bana Hill</h1>
+                            <h1>Phú Quốc</h1>
                             <div class="intro_price">Giá: 1,200,000đ</div>
                             <div class="rating rating_4">
                                 <i class="fas fa-star"></i>
@@ -435,7 +549,7 @@
                         </div>
                         <div class="button intro_button">
                             <div class="button_bcg"></div>
-                            <a href="#">Xem ngay<span></span><span></span><span></span></a></div>
+                            <a href="order.html">Book<span></span><span></span><span></span></a></div>
                     </div>
                 </div>
             </div>
@@ -485,7 +599,7 @@
         <!--        Offers-->
         <div class="main_offers">
             <div class="box main_offers__box">
-                <h2 class="offers_title">Các ưu đãi tối nhất</h2>
+                <h2 class="offers_title">Các tour nhất sắp ra mắt</h2>
                 <div class="offers_items">
                     <div class="offers_item">
                         <div class="offers_image">

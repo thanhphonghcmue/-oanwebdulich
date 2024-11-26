@@ -294,30 +294,35 @@ h1, h2, h3, h4, h5, h6 {
   color: #FFFFFF;
 }
 
+/* Cấu trúc cho thanh user */
 .bar__user {
   display: flex;
   grid-column: 10/12;
   height: 36px;
   justify-content: flex-end;
+  margin-right: 15px;  /* Đã có sẵn trong mã của bạn */
 }
 
+/* Cấu hình cho các liên kết bên trong bar__user */
 .bar__user a {
-  display: block;
+  display: inline-block;  /* Thay từ block thành inline-block để không chiếm toàn bộ dòng */
   font-size: 10px;
   line-height: 36px;
   font-weight: 600;
   color: #FFFFFF;
   text-transform: uppercase;
+  white-space: nowrap;  /* Ngăn việc cắt dòng */
+  text-overflow: ellipsis;  /* Hiển thị dấu ba chấm nếu nội dung quá dài */
+  overflow: hidden;  /* Ẩn phần nội dung bị tràn */
+  min-width: 80px;  /* Đảm bảo độ rộng tối thiểu để hiển thị tên người dùng */
 }
 
+/* Thay đổi màu khi hover */
 .bar__user a:hover {
   color: #fa9e1c;
 }
 
-.bar__user {
-  margin-right: 15px;
-}
-
+/* Phần padding cho bar__user-login */
 .bar__user-login {
   padding-right: 35px;
 }
@@ -804,7 +809,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .intro_text {
   text-align: center;
-  top: 40%;
+  top: 25%;
 }
 .intro_text h1 {
   color: #FFffff;
